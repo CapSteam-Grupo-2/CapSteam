@@ -10,11 +10,18 @@ import java.util.Optional;
 @Service
 public class GameServiceImpl implements GameService {
 
-    @Autowired
-    private GameDao gameDao;
+	@Autowired
+	private GameDao gameDao;
 
-    @Override
-    public Optional<GameModel> findById(int id) {
-        return gameDao.findById(id);
-    }
+	@Override
+	public Optional<GameModel> findById(int id) {
+		return gameDao.findById(id);
+	}
+
+	@Override
+	public void saveGame(GameModel game) {
+		gameDao.save(game);
+
+	}
+
 }
