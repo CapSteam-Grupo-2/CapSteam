@@ -18,4 +18,10 @@ public class GameController {
         model.addAttribute("game", service.findById(id));
         return "form.html";
     }
+
+    @GetMapping("/details")
+    public String getDetails(@RequestParam("id") int id, Model model) {
+        model.addAttribute("game", service.findById(id));
+        return "details.html";
+    }
 }
