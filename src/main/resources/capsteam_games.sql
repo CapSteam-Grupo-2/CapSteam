@@ -1,3 +1,34 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@albaCapgemini 
+CapSteam-Grupo-2
+/
+CapSteam
+Private
+Cannot fork because forking is disabled.
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+Settings
+CapSteam/src/main/resources/capsteam_games.sql
+@davidclcap
+davidclcap cambio queryddbb, añadido modelo, clase ultis
+Latest commit a804733 2 minutes ago
+ History
+ 2 contributors
+@davidclcap@albaCapgemini
+65 lines (54 sloc)  2.11 KB
+
 -- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
 -- Host: localhost    Database: capsteam
@@ -21,24 +52,24 @@
 --
 -- Table structure for table `games`
 --
-CREATE DATABASE CapSteam;
-use CapSteam;
+CREATE DATABASE gamedb;
+use gamedb;
 
 DROP TABLE IF EXISTS `games`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `games` (
   `Id` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(255) DEFAULT NULL,
-  `Platform` varchar(255) DEFAULT NULL,
-  `Year` int DEFAULT NULL,
-  `Genre` varchar(255) DEFAULT NULL,
-  `Publisher` varchar(255) DEFAULT NULL,
-  `NA_Sales` int DEFAULT NULL,
-  `EU_Sales` int DEFAULT NULL,
-  `JP_Sales` int DEFAULT NULL,
-  `Other_Sales` int DEFAULT NULL,
-  `Global_Sales` int DEFAULT NULL,
+  `Name` varchar(255) NOT NULL,
+  `Platform` varchar(255) NOT NULL,
+  `Year` int NOT NULL,
+  `Genre` varchar(255) NOT NULL,
+  `Publisher` varchar(255) NOT NULL,
+  `NA_Sales` int NOT NULL,
+  `EU_Sales` int NOT NULL,
+  `JP_Sales` int NOT NULL,
+  `Other_Sales` int NOT NULL,
+  `Global_Sales` int NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -60,5 +91,3 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2023-03-22 11:46:02
