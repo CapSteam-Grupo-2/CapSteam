@@ -17,4 +17,12 @@ public class GameServiceImpl implements GameService {
     public Optional<GameModel> findById(int id) {
         return gameDao.findById(id);
     }
+
+	@Override
+	public void saveGame(GameModel game) {
+		gameDao.save(game);
+		
+	}
+    
+    
 }

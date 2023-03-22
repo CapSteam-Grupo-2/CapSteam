@@ -7,4 +7,5 @@ import java.util.Optional;
 public interface GameService {
 
     Optional<GameModel> findById(int id);
+    public void saveGame(GameModel game);
 }
