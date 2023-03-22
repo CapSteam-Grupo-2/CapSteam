@@ -1,5 +1,5 @@
 package com.capsteam.service;
 
-public class PruebaService {
+public class GameService {
 
 }

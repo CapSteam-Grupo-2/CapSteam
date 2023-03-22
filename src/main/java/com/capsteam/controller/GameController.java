@@ -1,5 +1,5 @@
 package com.capsteam.controller;
 
-public class PruebaController {
+public class GameController {
 
 }
