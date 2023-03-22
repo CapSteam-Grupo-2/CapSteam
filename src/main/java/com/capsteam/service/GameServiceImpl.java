@@ -1,7 +1,7 @@
 package com.capsteam.service;
 
 import com.capsteam.dao.GameDao;
-import com.capsteam.model.Game;
+import com.capsteam.model.GameModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class GameServiceImpl implements GameService {
     private GameDao gameDao;
 
     @Override
-    public Optional<Game> findById(long id) {
+    public Optional<GameModel> findById(int id) {
         return gameDao.findById(id);
     }
 }

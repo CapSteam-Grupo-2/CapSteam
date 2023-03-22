@@ -59,17 +59,17 @@ DROP TABLE IF EXISTS `games`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `games` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(255) NOT NULL,
-  `Platform` varchar(255) NOT NULL,
-  `Year` int NOT NULL,
-  `Genre` varchar(255) NOT NULL,
-  `Publisher` varchar(255) NOT NULL,
-  `NA_Sales` int NOT NULL,
-  `EU_Sales` int NOT NULL,
-  `JP_Sales` int NOT NULL,
-  `Other_Sales` int NOT NULL,
-  `Global_Sales` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `platform` varchar(255) NOT NULL,
+  `year` int NOT NULL,
+  `genre` varchar(255) NOT NULL,
+  `publisher` varchar(255) NOT NULL,
+  `nasales` int NOT NULL,
+  `eusales` int NOT NULL,
+  `jpsales` int NOT NULL,
+  `othersales` int NOT NULL,
+  `globalsales` int NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -91,3 +91,4 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+

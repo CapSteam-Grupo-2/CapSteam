@@ -14,7 +14,7 @@ public class GameController {
     private GameService service;
 
     @GetMapping("/edit")
-    public String editGame(@RequestParam("id") long id, Model model) {
+    public String editGame(@RequestParam("id") int id, Model model) {
         model.addAttribute("game", service.findById(id));
         return "form.html";
     }
