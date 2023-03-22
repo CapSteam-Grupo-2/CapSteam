@@ -36,7 +36,7 @@ CREATE TABLE `games` (
   `publisher` varchar(255) NOT NULL,
   `nasales` int NOT NULL,
   `eusales` int NOT NULL,
-  `jp_sales` int NOT NULL,
+  `jpsales` int NOT NULL,
   `othersales` int NOT NULL,
   `globalsales` int NOT NULL,
   PRIMARY KEY (`Id`)

@@ -13,26 +13,26 @@ public class GameModel {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "Id")
+	@Column(name = "id")
 	private int id;
-	@Column(name = "Name")
+	@Column(name = "name")
 	private String name;
-	@Column(name = "Platform")
+	@Column(name = "platform")
 	private String platform;
-	@Column(name = "Year")
+	@Column(name = "year")
 	private int year;
-	@Column(name = "Genre")
+	@Column(name = "genre")
 	private String	genre;
-	@Column(name = "Publisher")
+	@Column(name = "publisher")
 	private String publisher;
-	@Column(name = "NA_Sales")
+	@Column(name = "nasales")
 	private int na_sales;
-	@Column(name = "EU_Sales")
+	@Column(name = "eusales")
 	private int eu_sales;
-	@Column(name = "JP_Sales")
+	@Column(name = "jpsales")
 	private int jp_sales;
-	@Column(name = "Other_Sales")
+	@Column(name = "othersales")
 	private int other_sales;
-	@Column(name = "Global_Sales")
+	@Column(name = "globalsales")
 	private int global_sales;
 }
