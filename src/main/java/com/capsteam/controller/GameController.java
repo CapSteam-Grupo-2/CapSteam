@@ -33,4 +33,13 @@ public class GameController {
 		return "form.html";
 
 	}
+	//Listar Usuarios
+	@GetMapping("/")
+	public String listUsers(Model m) {
+		m.addAttribute("gameList",service.getGames());
+		
+		// Para que veas que funciona un método hecho a medida
+		//m.addAttribute("userList", service.findByUsername("Antonio"));
+		return "list.html";
+	}
 }
