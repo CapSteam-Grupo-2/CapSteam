@@ -1,5 +1,10 @@
 package com.capsteam.service;
 
-public class GameService {
+import com.capsteam.model.GameModel;
 
+import java.util.Optional;
+
+public interface GameService {
+
+    Optional<GameModel> findById(int id);
 }

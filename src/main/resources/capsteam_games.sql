@@ -1,3 +1,34 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@albaCapgemini 
+CapSteam-Grupo-2
+/
+CapSteam
+Private
+Cannot fork because forking is disabled.
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+Settings
+CapSteam/src/main/resources/capsteam_games.sql
+@davidclcap
+davidclcap cambio queryddbb, añadido modelo, clase ultis
+Latest commit a804733 2 minutes ago
+ History
+ 2 contributors
+@davidclcap@albaCapgemini
+65 lines (54 sloc)  2.11 KB
+
 -- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
 -- Host: localhost    Database: capsteam
@@ -61,4 +92,3 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-22 11:46:02
