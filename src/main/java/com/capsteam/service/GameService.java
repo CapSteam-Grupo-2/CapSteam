@@ -8,5 +8,8 @@ public interface GameService {
 
 	Optional<GameModel> findById(int id);
 
-	void saveGame(GameModel game);
+	void save(GameModel game);
+
+	void deleteById(int id);
+
 }
