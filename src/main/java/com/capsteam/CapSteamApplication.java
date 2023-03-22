@@ -8,7 +8,6 @@ public class CapSteamApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CapSteamApplication.class, args);
-		System.out.println("pruba");
 	}
 
 }
