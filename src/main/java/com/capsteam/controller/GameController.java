@@ -2,6 +2,8 @@ package com.capsteam.controller;
 
 import com.capsteam.model.GameModel;
 import com.capsteam.service.GameService;
+import com.capsteam.util.Utils;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,7 +43,7 @@ public class GameController {
         return "details.html";
     }
 
-    @DeleteMapping("/delete")
+    @GetMapping("/delete")
     public String removeGame(@RequestParam("id") int id) {
         service.deleteById(id);
         return ("redirect:/");
@@ -52,5 +54,11 @@ public class GameController {
     public String listUsers(Model m) {
         m.addAttribute("gameList", service.getGames());
         return "list.html";
+    }
+    @GetMapping("/p")
+    public String p() {
+		GameModel games = new GameModel("1","2","3","4","5","6","7","8","9","10");
+		service.save(games);
+    	return "list.html";
     }
 }

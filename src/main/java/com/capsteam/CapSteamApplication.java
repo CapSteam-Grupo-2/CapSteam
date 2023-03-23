@@ -10,8 +10,7 @@ public class CapSteamApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CapSteamApplication.class, args);
-		Utils read = new Utils();
-		read.leerArchivoCsv();
+
 	}
 
 }

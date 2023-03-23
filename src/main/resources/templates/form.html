@@ -33,16 +33,35 @@
 					</tr>
 					<tr>
 						<td><label for="genre">Genre:</label></td>
-						<td><input type="number" th:field="*{genre}" /></td>
+						<td><input type="text" th:field="*{genre}" /></td>
 					</tr>
 					<tr>
 						<td><label for="publisher">Publisher:</label></td>
-						<td><input type="publisher" th:field="*{publisher}" /></td>
+						<td><input type="text" th:field="*{publisher}" /></td>
 					</tr>
-
+					<tr>
+						<td><label for="na_sales">NA_Sales:</label></td>
+						<td><input type="number" th:field="*{na_sales}" /></td>
+					</tr>
+					<tr>
+						<td><label for="eu_sales">EU_Sales:</label></td>
+						<td><input type="number" th:field="*{eu_sales}" /></td>
+					</tr>
+					<tr>
+						<td><label for="jp_sales">JP_Sales:</label></td>
+						<td><input type="number" th:field="*{jp_sales}" /></td>
+					</tr>
+					<tr>
+						<td><label for="other_sales">Other_Sales:</label></td>
+						<td><input type="number" th:field="*{other_sales}" /></td>
+					</tr>
+					<tr>
+						<td><label for="global_sales">Global Sales:</label></td>
+						<td><input type="number" th:field="*{global_sales}" /></td>
+					</tr>
 					<tr>
 						<td colspan="2" align="center"><input type="submit"
-							value="Guardar Registro"></td>
+							value="Save Game"></td>
 					</tr>
 				</table>
 			</form>
