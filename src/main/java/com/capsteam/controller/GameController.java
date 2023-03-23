@@ -29,7 +29,7 @@ public class GameController {
 
     @PostMapping("/save")
     public String saveGame(GameModel game) {
-        service.saveGame(game);
+        service.save(game);
         return ("redirect:/");
     }
 

@@ -23,25 +23,25 @@ public class GameModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private String id;
     @Column(name = "name")
     private String name;
     @Column(name = "platform")
     private String platform;
     @Column(name = "year")
-    private int year;
+    private String year;
     @Column(name = "genre")
     private String genre;
     @Column(name = "publisher")
     private String publisher;
     @Column(name = "nasales")
-    private int na_sales;
+    private String na_sales;
     @Column(name = "eusales")
-    private int eu_sales;
+    private String eu_sales;
     @Column(name = "jpsales")
-    private int jp_sales;
+    private String jp_sales;
     @Column(name = "othersales")
-    private int other_sales;
+    private String other_sales;
     @Column(name = "globalsales")
-    private int global_sales;
+    private String global_sales;
 }
