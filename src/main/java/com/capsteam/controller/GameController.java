@@ -64,4 +64,9 @@ public class GameController {
         return "list.html";
     }
 
+    @GetMapping("/publisher")
+    public String findByPublisher(@RequestParam("publisher") String publisher, Model m) {
+        m.addAttribute("gameList", service.findByPublisher(publisher));
+        return "list.html";
+    }
 }

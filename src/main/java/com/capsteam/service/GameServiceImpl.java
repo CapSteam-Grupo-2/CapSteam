@@ -24,6 +24,7 @@ public class GameServiceImpl implements GameService {
 		gameDao.save(game);
 	}
 
+	@Override
 	public List<GameModel> getGames(){
 		return gameDao.findAll();
 	}
@@ -31,6 +32,11 @@ public class GameServiceImpl implements GameService {
 	@Override
 	public void deleteById(int id) {
 		gameDao.deleteById(id);
+	}
+
+	@Override
+	public List<GameModel> findByPublisher(String publisher) {
+		return gameDao.findByPublisher(publisher);
 	}
 
 }

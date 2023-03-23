@@ -15,4 +15,5 @@ public interface GameService {
 
     void deleteById(int id);
 
+    List<GameModel> findByPublisher(String publisher);
 }
