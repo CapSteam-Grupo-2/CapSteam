@@ -12,25 +12,32 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class GameController {
 
-	@Autowired
-	private GameService service;
+    @Autowired
+    private GameService service;
 
-	@GetMapping("/edit")
-	public String editGame(@RequestParam("id") int id, Model model) {
-		model.addAttribute("game", service.findById(id));
-		return "form.html";
-	}
+    @GetMapping("/edit")
+    public String editGame(@RequestParam("id") int id, Model model) {
+        model.addAttribute("game", service.findById(id));
+        return "form.html";
+    }
 
-	@PostMapping("/save")
-	public String saveGame(GameModel game) {
-		service.saveGame(game);
-		return ("redirect:/");
-	}
+    @GetMapping("/details")
+    public String getDetails(@RequestParam("id") int id, Model model) {
+        model.addAttribute("game", service.findById(id));
+        return "details.html";
+    }
 
-	@GetMapping("/new")
-	public String addGame(GameModel game, Model model) {
-		model.addAttribute("game", game);
-		return "form.html";
+    @PostMapping("/save")
+    public String saveGame(GameModel game) {
+        service.saveGame(game);
+        return ("redirect:/");
+    }
 
-	}
+    @GetMapping("/new")
+    public String addGame(GameModel game, Model model) {
+        model.addAttribute("game", game);
+        return "form.html";
+
+    }
+
 }
