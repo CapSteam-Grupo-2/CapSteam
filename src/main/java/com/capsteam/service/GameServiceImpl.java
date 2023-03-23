@@ -2,7 +2,6 @@ package com.capsteam.service;
 
 import com.capsteam.dao.GameDao;
 import com.capsteam.model.GameModel;
-import com.ejemplos.spring.model.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +21,7 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public void saveGame(GameModel game) {
+	public void save(GameModel game) {
 		gameDao.save(game);
 
 	}
