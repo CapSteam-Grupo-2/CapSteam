@@ -1,6 +1,7 @@
 package com.capsteam.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,6 +16,7 @@ import javax.persistence.Table;
 @Entity
 @Setter
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "games")
@@ -35,13 +37,13 @@ public class GameModel {
     @Column(name = "publisher")
     private String publisher;
     @Column(name = "nasales")
-    private int na_sales;
+    private double na_sales;
     @Column(name = "eusales")
-    private int eu_sales;
+    private double eu_sales;
     @Column(name = "jpsales")
-    private int jp_sales;
+    private double jp_sales;
     @Column(name = "othersales")
-    private int other_sales;
+    private double other_sales;
     @Column(name = "globalsales")
-    private int global_sales;
+    private double global_sales;
 }

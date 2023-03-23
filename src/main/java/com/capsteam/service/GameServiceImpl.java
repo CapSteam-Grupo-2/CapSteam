@@ -5,6 +5,7 @@ import com.capsteam.model.GameModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,12 +22,21 @@ public class GameServiceImpl implements GameService {
 	@Override
 	public void save(GameModel game) {
 		gameDao.save(game);
+	}
 
+	@Override
+	public List<GameModel> getGames(){
+		return gameDao.findAll();
 	}
 
 	@Override
 	public void deleteById(int id) {
 		gameDao.deleteById(id);
+	}
+
+	@Override
+	public List<GameModel> findByPublisher(String publisher) {
+		return gameDao.findByPublisher(publisher);
 	}
 
 }
