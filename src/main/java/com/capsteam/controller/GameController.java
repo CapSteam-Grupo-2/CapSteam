@@ -52,7 +52,7 @@ public class GameController {
         return "details.html";
     }
 
-    @DeleteMapping("/delete")
+    @GetMapping("/delete")
     public String removeGame(@RequestParam("id") int id) {
         service.deleteById(id);
         return ("redirect:/");

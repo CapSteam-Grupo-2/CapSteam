@@ -4,59 +4,63 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
     <link rel="stylesheet" th:href="@{/css/custom.css}"/>
-    <title>Details</title>
+
+    <title>CapSteam</title>
 </head>
 <body>
+
 <div class="container">
+
     <div align="center">
-        <h1>
-            Game Details
-        </h1>
-        <div method="get" th:object="${games}" th:action="@{/details}">
-            <p id="id" th:field="*{id}" type="hidden" />
+        <h2>DETALLES DEL JUEGO</h2>
+
+        <form method="post" th:object="${game}" th:action="@{/save}">
+            <input id="id" th:field="*{id}" type="hidden"/>
             <table>
                 <tr>
                     <td><label for="name">Name:</label></td>
-                    <td><p th:field="*{name}" /></td>
+                    <td><input type="text" th:field="*{name}" readonly/></td>
                 </tr>
                 <tr>
                     <td><label for="platform">Platform:</label></td>
-                    <td><p th:field="*{platform}" /></td>
+                    <td><input type="text" th:field="*{platform}" readonly/></td>
                 </tr>
                 <tr>
                     <td><label for="year">Year:</label></td>
-                    <td><p th:field="*{year}" /></td>
+                    <td><input type="number" th:field="*{year}" readonly/></td>
                 </tr>
                 <tr>
                     <td><label for="genre">Genre:</label></td>
-                    <td><p th:field="*{genre}" /></td>
+                    <td><input type="text" th:field="*{genre}" readonly/></td>
                 </tr>
                 <tr>
                     <td><label for="publisher">Publisher:</label></td>
-                    <td><p th:field="*{publisher}" /></td>
+                    <td><input type="text" th:field="*{publisher}" readonly/></td>
                 </tr>
                 <tr>
                     <td><label for="na_sales">NA_Sales:</label></td>
-                    <td><p th:field="*{na_sales}" /></td>
+                    <td><input type="number" th:field="*{na_sales}" readonly/></td>
                 </tr>
                 <tr>
                     <td><label for="eu_sales">EU_Sales:</label></td>
-                    <td><p th:field="*{eu_sales}" /></td>
+                    <td><input type="number" th:field="*{eu_sales}" readonly/></td>
                 </tr>
                 <tr>
                     <td><label for="jp_sales">JP_Sales:</label></td>
-                    <td><p th:field="*{jp_sales}" /></td>
+                    <td><input type="number" th:field="*{jp_sales}" readonly/></td>
                 </tr>
                 <tr>
-                    <td><label for="other_sales">Other Sales:</label></td>
-                    <td><p th:field="*{other_sales}" /></td>
+                    <td><label for="other_sales">Other_Sales:</label></td>
+                    <td><input type="number" th:field="*{other_sales}" readonly/></td>
                 </tr>
                 <tr>
                     <td><label for="global_sales">Global Sales:</label></td>
-                    <td><p th:field="*{global_sales}" /></td>
+                    <td><input type="number" th:field="*{global_sales}" readonly/></td>
                 </tr>
+
             </table>
-        </div>
+        </form>
+
     </div>
 </div>
 </body>
