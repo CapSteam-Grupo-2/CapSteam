@@ -7,9 +7,12 @@ import java.util.Optional;
 
 public interface GameService {
 
-	Optional<GameModel> findById(int id);
+    Optional<GameModel> findById(int id);
 
-	void save(GameModel game);
-	
-	 List<GameModel> getGames();
+    List<GameModel> getGames();
+
+    void save(GameModel game);
+
+    void deleteById(int id);
+
 }

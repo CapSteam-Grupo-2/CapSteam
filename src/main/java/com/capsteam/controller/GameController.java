@@ -6,6 +6,7 @@ import com.capsteam.service.ReadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,8 +20,8 @@ public class GameController {
     @Autowired
     private ReadService readService;
 
-    @GetMapping("")
-    public String inizializer() {
+    @GetMapping("/load")
+    public String initializer() {
         for (String game : readService.readFileCsv()) {
             saveGame(readService.parseModelfromString(game));
         }
@@ -43,12 +44,24 @@ public class GameController {
     public String addGame(GameModel game, Model model) {
         model.addAttribute("game", game);
         return "form.html";
-
     }
 
-    @GetMapping("/list")
-    public String getGames(Model m) {
+    @GetMapping("/details")
+    public String getDetails(@RequestParam("id") int id, Model model) {
+        model.addAttribute("game", service.findById(id));
+        return "details.html";
+    }
+
+    @DeleteMapping("/delete")
+    public String removeGame(@RequestParam("id") int id) {
+        service.deleteById(id);
+        return ("redirect:/");
+    }
+
+    @GetMapping("/")
+    public String listGames(Model m) {
         m.addAttribute("gameList", service.getGames());
         return "list.html";
     }
+
 }
