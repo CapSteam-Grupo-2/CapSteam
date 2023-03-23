@@ -17,7 +17,10 @@
 
 		<h2>LISTADO DE USUARIOS</h2>
 		<p>Datos de la tabla de usuarios</p>
-
+		
+		<p>
+			<a href="/new" class="btn btn-primary">Nuevo Usuario</a>
+		</p>
 		<table class="table table-striped">
 			<tr>
 				<th>Nº</th>
@@ -46,14 +49,14 @@
 				<td th:text="${user.global_sales}" />
 			
 
-				<td><a th:href="@{/edit(id=${user.id})}">Modificar</a> | <a
-					th:href="@{/delete(id=${user.id})}">Eliminar</a></td>
+				<td><a th:href="@{/edit(id=${user.id})}">Modificar</a> | 
+					<a th:href="@{/delete(id=${user.id})}">Eliminar</a> |
+					<a th:href="@{/details(id=${user.id})}">Details</a>
+				</td>
 			</tr>
 
 		</table>
-		<p>
-			<a href="/new" class="btn btn-primary">Nuevo Usuario</a>
-		</p>
+
 	</div>
 </body>
 </html>

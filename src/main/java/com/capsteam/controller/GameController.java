@@ -50,7 +50,7 @@ public class GameController {
 	}
 
     @GetMapping("/")
-    public String listUsers(Model m) {
+    public String listGame(Model m) {
         m.addAttribute("gameList", service.getGames());
         return "list.html";
     }
