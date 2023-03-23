@@ -17,7 +17,6 @@ public class GameController {
 	@Autowired
 	private GameService service;
 
-
 	@GetMapping("/edit")
 	public String editGame(@RequestParam("id") int id, Model model) {
 		model.addAttribute("game", service.findById(id));
@@ -37,10 +36,17 @@ public class GameController {
 
 	}
 
+	@GetMapping("/details")
+	public String getDetails(@RequestParam("id") int id, Model model) {
+		model.addAttribute("game", service.findById(id));
+		return "details.html";
+	}
+
 	@DeleteMapping("/delete")
 	public String removeGame(@RequestParam("id") int id) {
 		service.deleteById(id);
 		return ("redirect:/");
 
 	}
+
 }
