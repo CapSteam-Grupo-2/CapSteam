@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/css/custom.css}"/>
+
+    <title>CapSteam</title>
+</head>
+<body>
+
+<div class="container">
+
+    <div align="center">
+        <h2>LISTADO DE JUEGOS</h2>
+        <p>
+            <a href="/new" class="btn btn-primary">Nuevo Usuario</a>
+            <a href="/publisher?publisher=nintendo" class="btn btn-primary">Filtrar por Publisher</a>
+        </p>
+        <table class="table table-striped">
+            <tr>
+                <th>Nº</th>
+                <th>Name</th>
+                <th>Platform</th>
+                <th>Year</th>
+                <th>Genre</th>
+                <th>Publisher</th>
+                <th>Na_Sales</th>
+                <th>Eu_Sales</th>
+                <th>Jp_Sales</th>
+                <th>Others_Sales</th>
+                <th>Global_Sales</th>
+            </tr>
+            <tr th:each="user, status : ${gameList}">
+                <td th:text="${user.id}"/>
+                <td th:text="${user.name}"/>
+                <td th:text="${user.platform}"/>
+                <td th:text="${user.year}"/>
+                <td th:text="${user.genre}"/>
+                <td th:text="${user.publisher}"/>
+                <td th:text="${user.na_sales}"/>
+                <td th:text="${user.eu_sales}"/>
+                <td th:text="${user.jp_sales}"/>
+                <td th:text="${user.other_sales}"/>
+                <td th:text="${user.global_sales}"/>
+
+
+                <td><a th:href="@{/edit(id=${user.id})}">Modificar</a> |
+                    <a th:href="@{/delete(id=${user.id})}">Eliminar</a> |
+                    <a th:href="@{/details(id=${user.id})}">Details</a>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+</body>
+</html>
