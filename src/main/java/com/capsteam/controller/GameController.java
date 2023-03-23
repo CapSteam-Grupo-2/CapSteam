@@ -21,19 +21,24 @@ public class GameController {
 		return "form.html";
 	}
 
-	@PostMapping("/save")
-	public String saveGame(GameModel game) {
-		service.saveGame(game);
-		return ("redirect:/");
-	}
+    @GetMapping("/details")
+    public String getDetails(@RequestParam("id") int id, Model model) {
+        model.addAttribute("game", service.findById(id));
+        return "details.html";
+    }
+
+    @PostMapping("/save")
+    public String saveGame(GameModel game) {
+        service.save(game);
+        return ("redirect:/");
+    }
 
 	@GetMapping("/new")
 	public String addGame(GameModel game, Model model) {
 		model.addAttribute("game", game);
 		return "form.html";
-
 	}
-	//Listar Usuarios
+
 	@GetMapping("/")
 	public String listUsers(Model m) {
 		m.addAttribute("gameList",service.getGames());
