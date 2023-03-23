@@ -2,6 +2,8 @@ package com.capsteam.controller;
 
 import com.capsteam.model.GameModel;
 import com.capsteam.service.GameService;
+import com.capsteam.util.CsvParse;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +19,13 @@ public class GameController {
 	@Autowired
 	private GameService service;
 
+	@Autowired
+	private CsvParse read;
+	
+	@GetMapping("/load")
+	public void cargar() {
+		read.cargar();
+	}
 
 	@GetMapping("/edit")
 	public String editGame(@RequestParam("id") int id, Model model) {
@@ -37,10 +46,17 @@ public class GameController {
 
 	}
 
+	@GetMapping("/details")
+	public String getDetails(@RequestParam("id") int id, Model model) {
+		model.addAttribute("game", service.findById(id));
+		return "details.html";
+	}
+
 	@DeleteMapping("/delete")
 	public String removeGame(@RequestParam("id") int id) {
 		service.deleteById(id);
 		return ("redirect:/");
 
 	}
+
 }
