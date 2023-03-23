@@ -22,13 +22,18 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public void saveGame(GameModel game) {
+	public void save(GameModel game) {
 		gameDao.save(game);
 
 	}
 	//Para Listar Todos
 	public List<GameModel> getGames(){
 		return gameDao.findAll();
+	}
+
+	@Override
+	public void deleteById(int id) {
+		gameDao.deleteById(id);
 	}
 
 }

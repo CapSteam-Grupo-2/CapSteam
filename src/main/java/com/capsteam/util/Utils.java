@@ -27,7 +27,7 @@ public class Utils {
 				GameModel games = new GameModel(Integer.parseInt(columnsLine[0]),columnsLine[1],columnsLine[2],Integer.parseInt(columnsLine[3]),columnsLine[4],columnsLine[5],Integer.parseInt(columnsLine[6]),Integer.parseInt(columnsLine[7]),Integer.parseInt(columnsLine[8]),Integer.parseInt(columnsLine[9]),Integer.parseInt(columnsLine[10]));
 				
 				
-				service.saveGame(games);
+				service.save(games);
 				
 			}
 		}catch (Exception e) {

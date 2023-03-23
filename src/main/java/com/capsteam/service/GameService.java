@@ -9,7 +9,10 @@ public interface GameService {
 
 	Optional<GameModel> findById(int id);
 
-	void saveGame(GameModel game);
-	
-	 List<GameModel> getGames();
+	List<GameModel> getGames();
+
+	void save(GameModel game);
+
+	void deleteById(int id);
+
 }
