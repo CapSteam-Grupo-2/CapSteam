@@ -19,9 +19,14 @@ public class GameServiceImpl implements GameService {
 	}
 
 	@Override
-	public void saveGame(GameModel game) {
+	public void save(GameModel game) {
 		gameDao.save(game);
 
+	}
+
+	@Override
+	public void deleteById(int id) {
+		gameDao.deleteById(id);
 	}
 
 }
