@@ -1,6 +1,7 @@
 package com.capsteam.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,6 +16,7 @@ import javax.persistence.Table;
 @Entity
 @Setter
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "games")
@@ -23,25 +25,25 @@ public class GameModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private String id;
+    private int id;
     @Column(name = "name")
     private String name;
     @Column(name = "platform")
     private String platform;
     @Column(name = "year")
-    private String year;
+    private int year;
     @Column(name = "genre")
     private String genre;
     @Column(name = "publisher")
     private String publisher;
     @Column(name = "nasales")
-    private String na_sales;
+    private double na_sales;
     @Column(name = "eusales")
-    private String eu_sales;
+    private double eu_sales;
     @Column(name = "jpsales")
-    private String jp_sales;
+    private double jp_sales;
     @Column(name = "othersales")
-    private String other_sales;
+    private double other_sales;
     @Column(name = "globalsales")
-    private String global_sales;
+    private double global_sales;
 }
