@@ -23,7 +23,10 @@ public class GameServiceImpl implements GameService {
 	public void save(GameModel game) {
 		gameDao.save(game);
 	}
-
+	/**
+	 * El me metodo trae todo el listado de juegos.
+	 * @return Devuelve la lista de juegos..
+	 */
 	@Override
 	public List<GameModel> getGames(){
 		return gameDao.findAll();
@@ -33,7 +36,7 @@ public class GameServiceImpl implements GameService {
 	public void deleteById(int id) {
 		gameDao.deleteById(id);
 	}
-
+	
 	@Override
 	public List<GameModel> findByPublisher(String publisher) {
 		return gameDao.findByPublisher(publisher);
