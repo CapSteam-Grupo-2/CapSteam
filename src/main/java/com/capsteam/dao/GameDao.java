@@ -8,6 +8,11 @@ import java.util.List;
 
 @Repository
 public interface GameDao extends JpaRepository<GameModel,Integer> {
+    /**
+     *
+     * @param publisher
+     * @return
+     */
     List<GameModel> findByPublisher(String publisher);
 
 }

@@ -19,14 +19,24 @@ public class GameController {
     @Autowired
     private ReadService readService;
 
+    /**
+     * Carga el fichero CSV en la base de datos
+     * @return a la pagina html del listado
+     */
     @GetMapping("/load")
     public String initializer() {
         for (String game : readService.readFileCsv()) {
             saveGame(readService.parseModelfromString(game));
         }
-        return "list.html";
+        return ("redirect:/");
     }
 
+    /**
+     * Busca el juego por id y devuelve los datos para mostrarlos en el formulario
+     * @param id : id del juego
+     * @param model : modelo para guardar los datos del juego y devolverlos
+     * @return a la pagina html del formulario
+     */
     @GetMapping("/edit")
     public String editGame(@RequestParam("id") int id, Model model) {
         model.addAttribute("game", service.findById(id));
@@ -39,6 +49,12 @@ public class GameController {
         return ("redirect:/");
     }
 
+    /**
+     * Añade un juego por los datos que se mandan
+     * @param game : objeto vacio para rellenarlo en el formulario
+     * @param model : modelo donde se guarda el juego
+     * @return a la pagina html del formulario
+     */
     @GetMapping("/new")
     public String addGame(GameModel game, Model model) {
         model.addAttribute("game", game);
@@ -51,6 +67,11 @@ public class GameController {
         return "details.html";
     }
 
+    /**
+     * Borra un juego según el id
+     * @param id : id del juego que se va a eliminar
+     * @return a la pagina html del listado
+     */
     @GetMapping("/delete")
     public String removeGame(@RequestParam("id") int id) {
         service.deleteById(id);
@@ -63,6 +84,12 @@ public class GameController {
         return "list.html";
     }
 
+    /**
+     * Muestra un listado filtrando según el Publisher
+     * @param publisher : nombre del publisher por el que se va a filtrar
+     * @param m : modelo donde se guarda la lista filtrada que se muestra en el html
+     * @return a la pagina html del listado
+     */
     @GetMapping("/publisher")
     public String findByPublisher(@RequestParam("publisher") String publisher, Model m) {
         m.addAttribute("gameList", service.findByPublisher(publisher));
