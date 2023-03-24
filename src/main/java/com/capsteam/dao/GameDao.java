@@ -9,9 +9,9 @@ import java.util.List;
 @Repository
 public interface GameDao extends JpaRepository<GameModel,Integer> {
     /**
-     *
-     * @param publisher
-     * @return
+     * Busca y crea una lista
+     * @param publisher : campo por el que se va a buscar
+     * @return listado de juegos
      */
     List<GameModel> findByPublisher(String publisher);
 

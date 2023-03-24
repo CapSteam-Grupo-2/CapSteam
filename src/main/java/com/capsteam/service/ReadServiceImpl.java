@@ -28,10 +28,6 @@ public class ReadServiceImpl implements ReadService {
         return games;
     }
 
-    private String[] splitString(String value) {
-        return value.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-    }
-
     @Override
     public GameModel parseModelfromString(String gameData) {
         var game = splitString(gameData);
@@ -48,6 +44,10 @@ public class ReadServiceImpl implements ReadService {
                 .other_sales(Double.parseDouble(game[9]))
                 .global_sales(Double.parseDouble(game[10]))
                 .build();
+    }
+
+    private String[] splitString(String value) {
+        return value.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
     }
 
 }
