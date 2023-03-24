@@ -45,7 +45,12 @@ public class GameController {
         model.addAttribute("game", game);
         return "form.html";
     }
-
+    /**
+     * Obtiene los datos del juego seleccionado y lo redirecciona a la pagina details.html
+     * @param id : del valor seleccionado
+     * @param model : variable del modelo
+     * @return los datos del juego seleccioando
+     */
     @GetMapping("/details")
     public String getDetails(@RequestParam("id") int id, Model model) {
         model.addAttribute("game", service.findById(id));
@@ -57,16 +62,19 @@ public class GameController {
         service.deleteById(id);
         return ("redirect:/");
     }
-
+    /**
+     * Metodo que lista todos los juegos
+     * @param model : variable del modelo
+     * @return lista de juegos
+     */
     @GetMapping("/")
-    public String listGames(Model m) {
-        m.addAttribute("gameList", service.getGames());
+    public String listGames(Model model) {
+        model.addAttribute("gameList", service.getGames());
         return "list.html";
     }
-
     @GetMapping("/publisher")
-    public String findByPublisher(@RequestParam("publisher") String publisher, Model m) {
-        m.addAttribute("gameList", service.findByPublisher(publisher));
+    public String findByPublisher(@RequestParam("publisher") String publisher, Model model) {
+        model.addAttribute("gameList", service.findByPublisher(publisher));
         return "list.html";
     }
 }
